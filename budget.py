@@ -18,8 +18,9 @@ class SpendItem:
 
 
 def printspend():
+    print("This Months Spend:")
+    print("Name: " + "  " + "Cost: ")
     for i in lifetimeSpend:
-        print("Name: " + "  " + "Cost: ")
         print("{}    {}".format(i.nickname, i.price))
 
 
@@ -39,13 +40,14 @@ while True:
         while keyword != 'exit':
             keyword = input("Let me know if you need anything or type help to see all commands ")
             if keyword == 'add':
-                newExpense = int(input("How much was spent?"))
-                expenseName = input("What did you spend it on?")
+                newExpense = int(input("How much was spent? "))
+                expenseName = input("What did you spend it on? ")
                 currItem = currItem + 1
                 instance = SpendItem(expenseName, newExpense)
                 lifetimeSpend.append(instance)
                 totalBalance = totalBalance - newExpense
                 print("Your new balance is ${} \n".format(totalBalance))
+            elif keyword == 'showBalance':
                 printspend()
             elif keyword == 'help':
                 print()
